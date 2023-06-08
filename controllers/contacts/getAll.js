@@ -1,9 +1,9 @@
 const {Contact} = require("../../models/contact");
-const { ctrlWrapper } = require("../../helpers");
 
 const getAll = async (req, res) => {
-    const result = await Contact.find({});
+    const {_id: owner} = req.user;
+    const result = await Contact.find({owner}, "-createdAt -updatedAt").populate("owner", "email subscription");
     res.json(result);
 }
 
-module.exports = {getAll: ctrlWrapper(getAll)}
+module.exports = getAll

@@ -1,24 +1,7 @@
-// const contacts = require("./contacts");
+const contacts = require("./contacts");
+const auth = require("./auth");
 
-// module.exports = {
-//     contacts,
-// }
-
-const {
-    getAll,
-    getById,
-    add,
-    updateById,
-    updateFavorite,
-    deleteById,
-  } = require('./contacts');
-
-
-  module.exports = {
-    getAll,
-    getById,
-    add,
-    updateById,
-    updateFavorite,
-    deleteById,
-  };
+module.exports = {
+    contacts,
+    auth,
+}
